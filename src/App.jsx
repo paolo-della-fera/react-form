@@ -1,5 +1,8 @@
 import { useState } from "react";
+
 import AppHeader from "./components/AppHeader"
+import ArticleList from "./components/AppArticleList";
+import ArticleForm from "./components/AppFormArticle";
 
 
 
@@ -48,42 +51,20 @@ function App() {
     <>
       <AppHeader />
 
-      <div className="container text-center mt-5">
+      <main>
 
+        <div className="container text-center pt-5">
 
-        {/* article list */}
-        <div className="row">
+          {/* article list */}
+          <ArticleList f1Article={f1Article} />
 
-          {
-            f1Article.map((article) => (
-              <div className="col-md-4 mb-3" key={article.id}>
-                <div className="card h-100">
-                  <div className="card-body">
-                    <h5 className="card-title">{article.title}</h5>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
+          {/* form new article */}
+          <ArticleForm newArticle={newArticle} setNewArticle={setNewArticle} articleSubmit={articleSubmit} error={error} />
 
         </div>
 
+      </main>
 
-        {/* form new article */}
-        <div className="mt-5">
-
-          <h2>Add New Article</h2>
-
-          <form onSubmit={articleSubmit}>
-            <input type="text" className="form-control" value={newArticle} onChange={e => setNewArticle(e.target.value)} placeholder="Write the new article" />
-            <button type="submit" className="btn btn-primary mt-3">Add Article</button>
-          </form>
-          {error && <small className="fst-italic text-danger mt-2">To add the article it must contain more than 10 characters</small>}
-
-        </div>
-
-
-      </div>
 
     </>
   )
