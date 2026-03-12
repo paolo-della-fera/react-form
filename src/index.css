@@ -9,3 +9,21 @@
 header {
   background-color: red;
 }
+
+main {
+  background-image: url(./assets/pexels-jonathanborba-29252114.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.f1-form {
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+}
